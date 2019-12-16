@@ -1,4 +1,3 @@
-﻿
 #include <iostream>
 using namespace std;
 void printArray(int* arr, size_t size)
@@ -17,7 +16,7 @@ int main()
 	const int rows = 2;
 	const int cols = 2;
 	int static2array[rows][cols];//Creating two-dimensional static array
-	int** dynamic2array = new int*[rows];//Crating two-dimensional dynamic array
+	int** dynamic2array = new int*[rows];//Creating two-dimensional dynamic array
 	for (size_t i = 0; i < rows; i++)
 	{
 		dynamic2array[i] = new int[cols];
@@ -29,20 +28,13 @@ int main()
 	cout << "Two-dimensional static array: " << endl;
 	for (size_t i = 0; i < rows; i++)
 	{
-		for (size_t j = 0; j < cols; j++)
-		{
-			cout << &(static2array[i][j]) << endl;
-		}
+		printArray(static2array[i], cols);
 	}
 	cout << "Two-dimensional dynamic array: " << endl;
 	for (size_t i = 0; i < rows; i++)
 	{
-		for (size_t j = 0; j < cols; j++)
-		{
-			cout << &(dynamic2array[i][j]) << endl;
-		}
+		printArray(dynamic2array[i], cols);
 	}
-
 	for (size_t i = 0; i < rows; i++)
 	{
 		delete dynamic2array[i];
